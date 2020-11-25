@@ -1,4 +1,6 @@
 from django.http import HttpResponse
+from django.template import loader
+from django.shortcuts import render
 
 
 def page1(request):
@@ -152,3 +154,34 @@ def shebao(request):
         html_table += '<td>%d元</td>' % (base * 0.08)
         html_table += '<td>%d元</td>' % (base * 0.12)
         return HttpResponse(html + html_table + html_table_end + html_end)
+
+
+def page1_template(request):
+    t = loader.get_template('page1.html')
+    html = t.render()
+    return HttpResponse(html)
+
+
+def page5_template(request):
+    return render(request, 'page1.html')
+
+
+def page6_template(request):
+    t = loader.get_template('page2.html')
+    html = t.render({'name': '国老师',
+                     'age': 18})
+    return HttpResponse(html)
+
+
+def page7_template(request):
+    return render(request, 'page2.html', {'name': '国老师', 'age': 18})
+
+
+def test_tag(request):
+    dic = {
+        'name': '老田',
+        'has_car': False,
+        'age': 35,
+        'fav': ['乒乓球', '电影', '篮球', '写代码']
+    }
+    return render(request, 'page3.html', dic)

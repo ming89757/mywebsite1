@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% if has_car %}
+        <h1>{{ name }} 有车 </h1>
+    {% else %}
+        <h1>{{ name }} 没有车</h1>
+    {% endif %}
+    <h1>------------------</h1>
+    <h1>{{ name }}{% if has_car %}有{% else %}没有{% endif %}车</h1>
+    <h1>----------  for ----------------</h1>
+    <ul>
+        {% for x in fav %}
+        <li>第{{ forloop.counter }}个爱好：{{ x }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

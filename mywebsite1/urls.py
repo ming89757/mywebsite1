@@ -33,4 +33,9 @@ urlpatterns = [
     url(r'^test1', views.test1),
     url(r'^search', views.search),
     url(r'^shebao', views.shebao),
+    url(r'^page4', views.page1_template),
+    url(r'^page5', views.page5_template),
+    url(r'^page6', views.page6_template),
+    url(r'^page7', views.page7_template),
+    url(r'^page8', views.test_tag),
 ]
