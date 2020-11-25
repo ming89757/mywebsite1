@@ -20,7 +20,7 @@ from . import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.homepage),
-    url(r'^page1$', views.page1),
+    url(r'^page1$', views.page1, name="page1"),
     url(r'^page2$', views.page2),
     url(r'page3', views.page3),
     url(r'year/(\d{4})', views.page_year),
@@ -38,4 +38,7 @@ urlpatterns = [
     url(r'^page6', views.page6_template),
     url(r'^page7', views.page7_template),
     url(r'^page8', views.test_tag),
+    url(r'^pages', views.pages),
+    url(r'^person/(\w+)', views.person, name='person'),
+    url(r'^info/(\w+)', views.info, name="info")
 ]

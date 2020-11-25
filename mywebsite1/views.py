@@ -4,7 +4,7 @@ from django.shortcuts import render
 
 
 def page1(request):
-    print('page1')
+    # print('page1')
     return HttpResponse('this is page1')
 
 
@@ -185,3 +185,19 @@ def test_tag(request):
         'fav': ['乒乓球', '电影', '篮球', '写代码']
     }
     return render(request, 'page3.html', dic)
+
+
+def pages(request):
+    return render(request, 'pages.html')
+
+
+def person(request, name):
+    return render(request, 'person.html', locals())
+
+
+def info(request, name):
+    s = name + "的个人信息"
+    return HttpResponse(s)
+
+
+
