@@ -31,4 +31,6 @@ urlpatterns = [
     url(r'^test_get', views.test_get),
     url(r'birthday1/', views.birthday1),
     url(r'^test1', views.test1),
+    url(r'^search', views.search),
+    url(r'^shebao', views.shebao),
 ]
