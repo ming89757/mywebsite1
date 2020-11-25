@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form method="post" action="/shebao">
+        <div>
+            请输入基数<input type=input name="income">
+        </div>
+        <div>
+            户口类型
+            <select name="is_city">
+                <option value="1">城镇户口</option>
+                <option value="0">农村户口</option>
+            </select>
+        </div>
+            <input type="submit">
+        </form>
+     <table>
+        <thead>
+            <tr>
+                <th>项目</th>
+                <th>个人缴纳</th>
+                <th>单位缴纳</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>养老保险</td>
+		<td>{{ 个人 }}</td>
+		<td>{{ 单位 }}</td>
+            </tr>
+        </tbody>
+     </table>
+</body>
+</html>

@@ -104,56 +104,16 @@ def search(request):
 
 
 def shebao(request):
-    html = """
-    <!DOCTYPE html>
-    <html lang="cn">
-    <head>
-        <meta charset="UTF-8">
-        <title>Title</title>
-    </head>
-    <body>
-        <form method="post" action="/shebao">
-            <div>
-                请输入基数<input type=input name="income">
-            </div>
-            <div>
-                户口类型
-                <select name="is_city">
-                    <option value="1">城镇户口</option>
-                    <option value="0">农村户口</option>
-                </select>
-            </div>
-            <input type="submit">
-        </form>
-    """
-    html_table = """
-     <table>
-        <thead>
-            <tr>                
-                <th>项目</th>
-                <th>个人缴纳</th>
-                <th>单位缴纳</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>养老保险</td>"""
-    html_table_end = """</tr>
-                </tbody>
-            </table>"""
-    html_end = """
-                </body>
-                </html>
-                """
+    d = {'个人': 0, '单位': 0}
     if request.method == 'GET':
-        return HttpResponse(html + html_end)
+        return render(request, 'shebao.html', )
     elif request.method == 'POST':
         base = request.POST.get('income', '0')
         base = float(base)
         is_city = request.POST.get('is_city')
-        html_table += '<td>%d元</td>' % (base * 0.08)
-        html_table += '<td>%d元</td>' % (base * 0.12)
-        return HttpResponse(html + html_table + html_table_end + html_end)
+        d['个人'] = base * 0.08
+        d['单位'] = base * 0.12
+        return render(request, 'shebao.html', d)
 
 
 def page1_template(request):
@@ -168,8 +128,7 @@ def page5_template(request):
 
 def page6_template(request):
     t = loader.get_template('page2.html')
-    html = t.render({'name': '国老师',
-                     'age': 18})
+    html = t.render({'name': '国老师', 'age': 18})
     return HttpResponse(html)
 
 
