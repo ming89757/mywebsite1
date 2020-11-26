@@ -20,7 +20,7 @@ from django.conf.urls import include
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^bookstore', include('bookstore.urls')),
+    url(r'^bookstore/', include('bookstore.urls')),
     url(r'^$', views.homepage),
     url(r'^page1$', views.page1, name="page1"),
     url(r'^page2$', views.page2),
@@ -42,5 +42,5 @@ urlpatterns = [
     url(r'^page8', views.test_tag),
     url(r'^pages', views.pages),
     url(r'^person/(\w+)', views.person, name='person'),
-    url(r'^info/(\w+)', views.info, name="info")
+    url(r'^info/(\w+)', views.info, name="info"),
 ]
