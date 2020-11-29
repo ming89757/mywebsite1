@@ -4,5 +4,17 @@ from django.db import models
 
 
 class Book(models.Model):
-    title = models.CharField('book_name', max_length=100)
-    pub = models.CharField('pub', max_length=200, null=True)
+    title = models.CharField('书名', max_length=100)
+    pub = models.CharField('出版社', max_length=200, null=True)
+    price = models.DecimalField('价格',
+                                max_digits=12,
+                                decimal_places=2,
+                                default=0)
+    market_price = models.DecimalField('零售价',
+                                       max_digits=12,
+                                       decimal_places=2,
+                                       default=9999)
+
+
+class Author(models.Model):
+    name = models.CharField
