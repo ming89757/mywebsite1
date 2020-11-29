@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 
 
@@ -17,4 +18,6 @@ class Book(models.Model):
 
 
 class Author(models.Model):
-    name = models.CharField
+    name = models.CharField('姓名', max_length=100, blank=False, unique=True, db_index=True)
+    age = models.IntegerField('年龄', null=False, default=1)
+    email = models.EmailField('邮箱', null=True)
