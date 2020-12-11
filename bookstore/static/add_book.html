@@ -1,13 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cn">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>添加新书</title>
 </head>
 <body>
-    <form>
-        书名<input type="text" name="book_name">
-        出版社<input type="text" name="pub">
+    <form action="/bookstore/add_book" method="post">
+        <div>
+            书名<input type="text" name="book_name">
+        </div>
+        <div>
+            出版社<input type="text" name="pub">
+        </div>
+        <div>
+            定价<input type="text" name="price">
+        </div>
+        <div>
+            零售价<input type="text" name="market_price">
+        </div>
         <input type="submit" value="提交">
     </form>
 </body>
