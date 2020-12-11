@@ -16,9 +16,14 @@ class Book(models.Model):
                                        decimal_places=2,
                                        default=9999)
 
+    def __str__(self):
+        return self.title
+
 
 class Author(models.Model):
     name = models.CharField('姓名', max_length=100, blank=False, unique=True, db_index=True)
     age = models.IntegerField('年龄', null=False, default=1)
     email = models.EmailField('邮箱', null=True)
 
+    def __str__(self):
+        return self.name
