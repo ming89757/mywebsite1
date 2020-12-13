@@ -36,3 +36,11 @@ def add_book(request):
         abook.market_price = m_price
         abook.save()
         return HttpResponse('success')
+
+
+def test_f(request, up):
+    books = models.Book.objects.all()
+    for book in books:
+        book.market_price += up
+        book.save()
+    return HttpResponse("" % up)
