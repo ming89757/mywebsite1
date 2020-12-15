@@ -21,6 +21,7 @@ from django.conf.urls import include
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^bookstore/', include('bookstore.urls')),
+    url(r'^mystore/', include('mystore.urls')),
     url(r'^$', views.homepage),
     url(r'^page1$', views.page1, name="page1"),
     url(r'^page2$', views.page2),
