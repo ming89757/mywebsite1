@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+<ul>
+    {#  #}
+    {% if request.session.userinfo %}
+    <label>{{ request.session.userinfo.username }}</label>
+    <a href="/userinfo/logout">logout</a>
+
+    {% else %}
+    <li><a href="/userinfo/login">login</a></li>
+    <li><a href="/userinfo/reg">singup</a></li>
+    {% endif %}
+</ul>
+<a href="/bookstore/list_all">show all books</a>
+
+</body>
+</html>

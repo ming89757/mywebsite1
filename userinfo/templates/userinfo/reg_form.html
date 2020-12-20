@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="reg_form" method="post">
+    {% csrf_token %}
+    {#  #}
+    {{ myform.as_p }}
+</form>
+</body>
+</html>

@@ -31,7 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'mystore.apps.MystoreConfig',
+    'userinfo',
+    'mystore',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
