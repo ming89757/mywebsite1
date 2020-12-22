@@ -66,3 +66,11 @@ def reg_form(request):
     if request.method == 'GET':
         myform = forms.RegForm()
         return render(request, 'userinfo/reg_form.html', locals())
+    elif request.method == 'POST':
+        myform = forms.RegForm(request.POST)
+        if myform.is_valid():
+            print(myform.cleaned_data)
+            return HttpResponse('ok ' + str(myform.cleaned_data))
+        else:
+            return print('failed')
+

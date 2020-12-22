@@ -44,3 +44,6 @@ def test_f(request, up):
         book.market_price += up
         book.save()
     return HttpResponse("" % up)
+
+
+from django.core.paginator import Paginator
